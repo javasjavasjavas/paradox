@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="620" viewBox="0 0 160 620">
+    <rect x="10" y="10" width="140" height="600" rx="18" fill="#050607" stroke="#6c7177" stroke-width="2"/>
+    <text x="82" y="74" writing-mode="tb" glyph-orientation-vertical="0" fill="#fff" font-family="system-ui, sans-serif" font-size="38" font-weight="800" letter-spacing="10">新世界秩序のセールスマン</text>
+    <path d="M10 490H150" stroke="#7c8288" stroke-width="2"/>
+    <text x="86" y="584" transform="rotate(-90 86 584)" fill="#fff" font-family="Consolas, monospace" font-size="26">HUMAN</text>
+  </svg>

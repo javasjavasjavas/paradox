@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360">
+    <g fill="none" stroke="#2f86ff" stroke-opacity=".55">
+      <path d="M36 180H244M476 180h208M360 36v104M360 220v104"/>
+      <circle cx="360" cy="180" r="118" stroke-opacity=".18"/>
+      <circle cx="360" cy="180" r="164" stroke-opacity=".1"/>
+      <path d="M360 98 386 156 449 129 402 180 445 236 384 207 360 268 336 207 275 236 318 180 271 129 334 156Z" stroke-opacity=".36"/>
+    </g>
+  </svg>

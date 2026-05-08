@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="790" viewBox="0 0 540 790">
+    <defs>
+      <radialGradient id="g" cx="50%" cy="36%" r="66%">
+        <stop offset="0" stop-color="hsl(38 100% 64%)" stop-opacity=".5"/>
+        <stop offset=".45" stop-color="hsl(38 100% 42%)" stop-opacity=".16"/>
+        <stop offset="1" stop-color="#020508"/>
+      </radialGradient>
+      <pattern id="m" width="28" height="28" patternUnits="userSpaceOnUse">
+        <path d="M28 0H0V28" stroke="#fff" stroke-opacity=".08" fill="none"/>
+      </pattern>
+    </defs>
+    <rect x="16" y="16" width="508" height="758" rx="28" fill="#030507" stroke="hsl(38 100% 62%)" stroke-width="4"/>
+    <rect x="34" y="34" width="472" height="722" rx="18" fill="url(#g)"/>
+    <rect x="34" y="34" width="472" height="722" rx="18" fill="url(#m)"/>
+    <path d="M270 156 333 302 490 236 374 364 482 510 331 439 270 600 209 439 58 510 166 364 50 236 207 302Z" fill="none" stroke="hsl(38 100% 64%)" stroke-opacity=".55" stroke-width="3"/>
+    <text x="72" y="104" fill="#dceeff" font-family="Consolas, monospace" font-size="34" font-weight="800">NEO ORDER</text>
+    <text x="72" y="682" fill="#9fcfff" font-family="Consolas, monospace" font-size="28">MY / 604</text>
+  </svg>
