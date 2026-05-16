@@ -13,6 +13,7 @@ interface StickyCardShowcaseProps {
   localProgress: number;
   globalProgress: number;
   sectionProgresses: number[];
+  footerTransitionProgress: number;
   reducedMotion: boolean;
 }
 
@@ -21,6 +22,7 @@ export function StickyCardShowcase({
   localProgress,
   globalProgress,
   sectionProgresses,
+  footerTransitionProgress,
   reducedMotion,
 }: StickyCardShowcaseProps) {
   const { tilt, onPointerMove, onPointerLeave } = useMouseTilt(reducedMotion);
@@ -34,7 +36,9 @@ export function StickyCardShowcase({
     const experienceRawProgress =
       activeIndex === 2 ? clampProgress(sectionProgresses[2] ?? localProgress) : activeIndex > 2 ? 1 : 0;
     const experienceProgress = smooth(experienceRawProgress);
-    const collectionProgress = activeIndex === 3 ? smooth(Math.min(1, Math.max(0, sectionProgresses[3] ?? localProgress))) : 0;
+    const collectionRawProgress = clampProgress(sectionProgresses[3] ?? localProgress);
+    const collectionProgress =
+      activeIndex === 3 ? smooth(clampProgress((collectionRawProgress - 0.04) / 0.38)) : 0;
     const interactive = activeIndex === 2 && !reducedMotion;
     const heroInteractive = activeIndex === 0 && !reducedMotion;
     const sectionTwo = activeIndex === 1;
@@ -93,10 +97,18 @@ export function StickyCardShowcase({
     } as CSSProperties;
   }, [activeIndex, localProgress, reducedMotion, sectionProgresses, tilt.x, tilt.y]);
 
+  const showcaseStyle = {
+    "--showcase-opacity": reducedMotion ? 1 : 1 - footerTransitionProgress,
+    "--showcase-scale": 1,
+    "--showcase-y": "0vh",
+    "--showcase-blur": reducedMotion ? "0px" : `${2.2 * footerTransitionProgress}px`,
+  } as CSSProperties;
+
   return (
     <aside
       ref={showcaseRef}
       className={`sticky-card-showcase state-${activeIndex + 1}`}
+      style={showcaseStyle}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
       aria-label="Interactive Mind Reader card showcase"

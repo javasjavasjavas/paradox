@@ -81,7 +81,7 @@ const calloutDefinitions: CalloutDefinition[] = [
     side: "left",
     target: (card) => ({
       x: card.left + card.width * 0.018,
-      y: card.top + card.height * 0.7,
+      y: card.top + card.height * 0.7 + 10,
     }),
     labelYOffset: -35,
   },
@@ -92,7 +92,7 @@ const calloutDefinitions: CalloutDefinition[] = [
     side: "right",
     target: (card) => ({
       x: card.right - card.width * 0.018,
-      y: card.top + card.height * 0.12,
+      y: card.top + card.height * 0.12 - 40,
     }),
     labelYOffset: -10,
     textOffset: 28,
@@ -140,7 +140,7 @@ const calloutDefinitions: CalloutDefinition[] = [
     side: "left",
     target: (card) => ({
       x: card.left + card.width * 0.018,
-      y: card.top + card.height * 0.925,
+      y: card.top + card.height * 0.925 + 20,
     }),
     labelYOffset: -34,
     lineGap: 18,

@@ -3,18 +3,35 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { ProgressIndicator } from "./components/ProgressIndicator";
 import { ScrollSection } from "./components/ScrollSection";
+import { SignalFooter } from "./components/SignalFooter";
 import { StickyCardShowcase } from "./components/StickyCardShowcase";
 import { sections } from "./data/sections";
 import { useCinematicScroll } from "./hooks/useCinematicScroll";
 
 export default function App() {
   const { activeIndex, localProgress, globalProgress, sectionProgresses, prefersReducedMotion } =
-    useCinematicScroll(sections.length + 1);
-  const experienceIndex = Math.max(0, activeIndex - 1);
-  const progressSections = [{ id: "hero", eyebrow: "Paradox" }, ...sections.map(({ id, eyebrow }) => ({ id, eyebrow }))];
+    useCinematicScroll(sections.length + 2);
+  const footerIndex = sections.length + 1;
+  const experienceIndex = Math.min(sections.length - 1, Math.max(0, activeIndex - 1));
+  const lastSectionProgress = sectionProgresses[footerIndex - 1] ?? 0;
+  const footerTransitionProgress =
+    activeIndex === footerIndex
+      ? 1
+      : activeIndex === footerIndex - 1
+        ? Math.min(1, Math.max(0, (lastSectionProgress - 0.6) / 0.22))
+        : 0;
+  const progressSections = [
+    { id: "hero", eyebrow: "Paradox" },
+    ...sections.map(({ id, eyebrow }) => ({ id, eyebrow })),
+    { id: "signal", eyebrow: "Take The Pill" },
+  ];
 
   return (
-    <div className={`paradox-app ${activeIndex === 0 ? "is-hero-active" : "is-experience-active"}`}>
+    <div
+      className={`paradox-app ${activeIndex === 0 ? "is-hero-active" : "is-experience-active"} ${
+        activeIndex === footerIndex ? "is-footer-active" : ""
+      }`}
+    >
       <BackgroundFX activeIndex={experienceIndex} reducedMotion={prefersReducedMotion} />
       <Header />
       <Hero />
@@ -41,9 +58,11 @@ export default function App() {
           localProgress={activeIndex === 0 ? 0 : localProgress}
           globalProgress={globalProgress}
           sectionProgresses={sectionProgresses.slice(1)}
+          footerTransitionProgress={footerTransitionProgress}
           reducedMotion={prefersReducedMotion}
         />
       </main>
+      <SignalFooter />
     </div>
   );
 }

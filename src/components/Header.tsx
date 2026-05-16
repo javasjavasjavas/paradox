@@ -1,10 +1,9 @@
-import { Diamond } from "lucide-react";
-
 const navItems = [
   { label: "OG Collection", href: "#welcome" },
   { label: "Game", href: "#experience" },
   { label: "Cards", href: "#anatomy" },
   { label: "Codex", href: "#legacy" },
+  { label: "Signal", href: "#signal" },
 ];
 
 export function Header() {
@@ -25,7 +24,6 @@ export function Header() {
         ))}
       </nav>
       <div className="header-actions">
-        <Diamond size={15} className="header-diamond" aria-hidden="true" />
         <button className="header-join" type="button">
           Mint now
         </button>
