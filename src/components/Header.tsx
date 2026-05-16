@@ -1,21 +1,26 @@
 import { Diamond } from "lucide-react";
 
-const navItems = ["Collection", "Cards", "Rarities", "Lore", "About"];
+const navItems = [
+  { label: "OG Collection", href: "#welcome" },
+  { label: "Game", href: "#experience" },
+  { label: "Cards", href: "#anatomy" },
+  { label: "Codex", href: "#legacy" },
+];
 
 export function Header() {
   return (
     <header className="site-header">
-      <a className="brand-lockup" href="#welcome" aria-label="Paradox: Lex Machina home">
+      <a className="brand-lockup" href="#hero" aria-label="Paradox: Lex Machina home">
         <img
           className="brand-logo"
-          src="/assets/brand/paradox-lex-machina.svg"
-          alt="Paradox: Lex Machina"
+          src="/assets/brand/paradox-logo.svg"
+          alt="Paradox"
         />
       </a>
       <nav className="header-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <a key={item} href={`#${item.toLowerCase()}`}>
-            {item}
+          <a key={item.label} href={item.href}>
+            {item.label}
           </a>
         ))}
       </nav>

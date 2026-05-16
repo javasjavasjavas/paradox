@@ -232,17 +232,29 @@ button {
 
 .brand-lockup {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
+  width: max-content;
   color: white;
   text-decoration: none;
 }
 
 .brand-logo {
   display: block;
-  width: clamp(122px, 10vw, 154px);
+  width: clamp(104px, 8.6vw, 134px);
   height: auto;
-  max-height: 44px;
+  max-height: 38px;
   filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.24));
+}
+
+.brand-lockup span {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-display);
+  font-size: 13px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .header-nav {
@@ -307,6 +319,305 @@ button {
     0 0 24px rgba(255, 255, 255, 0.18),
     0 16px 40px rgba(0, 0, 0, 0.32);
   color: #010203;
+}
+
+.paradox-hero {
+  position: relative;
+  min-height: 100svh;
+  padding-top: var(--header-height);
+  overflow: hidden;
+  background: transparent;
+}
+
+.paradox-hero::before,
+.paradox-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.paradox-hero::before {
+  display: none;
+}
+
+.paradox-hero::after {
+  display: none;
+}
+
+.paradox-hero__inner {
+  position: relative;
+  z-index: 3;
+  min-height: calc(100svh - var(--header-height));
+  display: grid;
+  grid-template-columns: minmax(420px, 43%) minmax(0, 1fr);
+  align-items: center;
+  padding: 30px 4vw 98px 8.2vw;
+}
+
+.paradox-hero__copy {
+  position: relative;
+  z-index: 4;
+  min-width: 0;
+  max-width: 720px;
+}
+
+.paradox-hero__eyebrow,
+.paradox-hero__kicker {
+  margin: 0;
+  color: #9fceff;
+  font-family: Consolas, monospace;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.paradox-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.paradox-hero__eyebrow span,
+.paradox-hero__progress i,
+.paradox-hero__rail span,
+.paradox-hero__rail i {
+  display: block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border: 1px solid rgba(204, 234, 255, 0.88);
+  background: rgba(210, 235, 255, 0.84);
+  box-shadow:
+    0 0 10px rgba(94, 174, 255, 0.72),
+    0 0 18px rgba(94, 174, 255, 0.42);
+}
+
+.paradox-hero__title {
+  margin: 0;
+  min-width: 0;
+}
+
+.paradox-hero__title img {
+  display: block;
+  width: clamp(520px, 34vw, 690px);
+  max-width: 100%;
+  height: auto;
+  filter:
+    drop-shadow(0 2px 0 rgba(255, 255, 255, 0.22))
+    drop-shadow(0 28px 54px rgba(0, 0, 0, 0.74));
+}
+
+.paradox-hero__title span {
+  display: none;
+  margin-top: 8px;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-shadow: 0 18px 54px rgba(0, 0, 0, 0.82);
+}
+
+.paradox-hero__kicker {
+  margin-top: 42px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.paradox-hero__body {
+  max-width: 640px;
+  margin: 22px 0 0;
+  color: rgba(231, 238, 248, 0.72);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.paradox-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.paradox-hero__button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-width: 230px;
+  height: 52px;
+  padding: 0 24px;
+  border: 1px solid rgba(219, 235, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(2, 6, 11, 0.48);
+  color: rgba(245, 249, 255, 0.9);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 800;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 34px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(12px);
+}
+
+.paradox-hero__button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-18deg);
+  width: 52%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+  transition: transform 700ms var(--ease-out);
+}
+
+.paradox-hero__button:hover::before {
+  transform: translateX(280%) skewX(-18deg);
+}
+
+.paradox-hero__button span,
+.paradox-hero__button svg {
+  position: relative;
+  z-index: 1;
+}
+
+.paradox-hero__button--primary {
+  border-color: rgba(214, 235, 255, 0.95);
+  background: rgba(245, 249, 255, 0.96);
+  color: #07111d;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 0 22px rgba(83, 159, 255, 0.7),
+    0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
+.paradox-hero__art {
+  position: absolute;
+  z-index: 3;
+  right: -4vw;
+  bottom: 0;
+  width: min(73vw, 1500px);
+  height: min(calc(100svh - var(--header-height)), 48vw);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  opacity: calc(1 - var(--hero-fade, 0));
+  transform: scale(calc(1 + (var(--hero-fade, 0) * 0.08)));
+  transform-origin: 68% 88%;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.paradox-hero__art::before {
+  content: "";
+  position: absolute;
+  right: 6%;
+  bottom: 8%;
+  width: 70%;
+  height: 76%;
+  background: radial-gradient(ellipse, rgba(67, 156, 255, 0.32), transparent 62%);
+  filter: blur(28px);
+}
+
+.paradox-hero__art img {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+  filter:
+    drop-shadow(0 0 22px rgba(86, 172, 255, 0.35))
+    drop-shadow(0 34px 46px rgba(0, 0, 0, 0.66));
+}
+
+.paradox-hero__rail {
+  position: absolute;
+  z-index: 4;
+  left: 2.75vw;
+  top: 24vh;
+  bottom: 18vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  gap: 18px;
+  color: rgba(221, 237, 255, 0.68);
+}
+
+.paradox-hero__rail::before,
+.paradox-hero__rail::after {
+  content: "";
+  width: 1px;
+  background: rgba(176, 205, 228, 0.22);
+}
+
+.paradox-hero__rail::before {
+  min-height: 116px;
+}
+
+.paradox-hero__rail::after {
+  min-height: 110px;
+  border-left: 1px dashed rgba(176, 205, 228, 0.22);
+  background: transparent;
+}
+
+.paradox-hero__rail i {
+  width: 7px;
+  height: 7px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.paradox-hero__rail b {
+  font-family: Consolas, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.paradox-hero__progress {
+  position: absolute;
+  z-index: 5;
+  left: 8.2vw;
+  right: auto;
+  bottom: 30px;
+  display: grid;
+  grid-template-columns: auto 96px repeat(4, auto);
+  align-items: center;
+  gap: 22px;
+  color: white;
+  font-family: Consolas, monospace;
+}
+
+.paradox-hero__progress strong {
+  font-size: 17px;
+}
+
+.paradox-hero__progress span {
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.paradox-hero__progress i {
+  width: 9px;
+  height: 9px;
+  opacity: 0.36;
+  background: transparent;
+  box-shadow: none;
+}
+
+.paradox-hero__progress i.is-active {
+  opacity: 1;
+  background: rgba(245, 250, 255, 0.95);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.32);
 }
 
 .experience-shell {
@@ -553,6 +864,36 @@ button {
     0 0 28px rgba(255, 255, 255, 0.08);
 }
 
+.glow-button,
+#welcome .glow-button,
+#legacy .glow-button {
+  min-width: 230px;
+  height: 52px;
+  gap: 0;
+  padding: 0 24px;
+  border-radius: 8px;
+  border-color: rgba(219, 235, 255, 0.3);
+  background: rgba(2, 6, 11, 0.48);
+  color: rgba(245, 249, 255, 0.9);
+  font-size: 13px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 34px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(12px);
+}
+
+.glow-button--primary,
+#welcome .glow-button--primary,
+#legacy .glow-button--primary {
+  border-color: rgba(214, 235, 255, 0.95);
+  background: rgba(245, 249, 255, 0.96);
+  color: #07111d;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 0 22px rgba(83, 159, 255, 0.7),
+    0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -614,7 +955,21 @@ button {
   transition:
     left 900ms var(--ease-out),
     width 900ms var(--ease-out),
-    background 700ms ease;
+    background 700ms ease,
+    opacity 260ms ease,
+    visibility 260ms ease;
+}
+
+.paradox-app.is-hero-active .sticky-card-showcase {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.paradox-app.is-experience-active .sticky-card-showcase,
+.paradox-app.is-experience-active .progress-indicator {
+  opacity: 1;
+  visibility: visible;
 }
 
 .sticky-card-showcase::before {
@@ -1282,6 +1637,9 @@ button {
   gap: 26px;
   color: white;
   font-family: Consolas, monospace;
+  transition:
+    opacity 260ms ease,
+    visibility 260ms ease;
 }
 
 .progress-indicator strong {
@@ -1337,6 +1695,37 @@ button {
   .feature-grid--4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .paradox-hero__inner {
+    grid-template-columns: minmax(390px, 45%) minmax(0, 1fr);
+    padding-left: 7vw;
+  }
+
+  .paradox-hero__title img {
+    width: clamp(420px, 43vw, 540px);
+  }
+
+  .paradox-hero__title span {
+    font-size: 46px;
+  }
+
+  .paradox-hero__art {
+    right: -3vw;
+    width: min(68vw, 900px);
+    height: min(calc(100svh - var(--header-height)), 42vw);
+  }
+}
+
+@media (max-width: 1500px) and (min-width: 981px) {
+  .paradox-hero__title img {
+    width: clamp(450px, 39vw, 585px);
+  }
+
+  .paradox-hero__art {
+    right: -2vw;
+    width: min(68vw, 960px);
+    height: min(calc(100svh - var(--header-height)), 41vw);
+  }
 }
 
 @media (max-width: 980px) {
@@ -1367,13 +1756,101 @@ button {
   }
 
   .brand-logo {
-    width: 128px;
+    width: 112px;
+  }
+
+  .brand-lockup span {
+    font-size: 11px;
   }
 
   .header-join {
     min-width: 128px;
     height: 38px;
     font-size: 11px;
+  }
+
+  .paradox-hero {
+    min-height: auto;
+  }
+
+  .paradox-hero__inner {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding: 18px 22px 112px;
+  }
+
+  .paradox-hero__copy {
+    grid-row: 2;
+    width: calc(100vw - 44px);
+    max-width: 100%;
+    padding-top: 8px;
+  }
+
+  .paradox-hero__art {
+    position: relative;
+    grid-row: 1;
+    right: auto;
+    bottom: auto;
+    justify-self: center;
+    width: min(100%, 640px);
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .paradox-hero__art::before {
+    right: 13%;
+    bottom: 0;
+    width: 76%;
+    height: 86%;
+  }
+
+  .paradox-hero__art img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .paradox-hero__title img {
+    width: min(calc(100vw - 44px), 500px);
+    max-width: 100%;
+  }
+
+  .paradox-hero__title span {
+    font-size: 42px;
+  }
+
+  .paradox-hero__kicker {
+    margin-top: 26px;
+    font-size: 17px;
+  }
+
+  .paradox-hero__body {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  .paradox-hero__actions {
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .paradox-hero__button {
+    min-width: min(100%, 230px);
+  }
+
+  .paradox-hero__rail {
+    display: none;
+  }
+
+  .paradox-hero__progress {
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    grid-template-columns: auto 1fr repeat(4, auto);
+    gap: 14px;
   }
 
   .section-column {
@@ -1569,7 +2046,11 @@ button {
 
 @media (max-width: 560px) {
   .brand-logo {
-    width: 104px;
+    width: 92px;
+  }
+
+  .brand-lockup span {
+    display: none;
   }
 
   .header-join {
@@ -1582,6 +2063,56 @@ button {
     content: "MINT";
     font-size: 10px;
     letter-spacing: 0.16em;
+  }
+
+  .paradox-hero__inner {
+    padding: 14px 18px 96px;
+  }
+
+  .paradox-hero__copy,
+  .paradox-hero__title img {
+    width: 354px;
+    max-width: 100%;
+  }
+
+  .paradox-hero__art {
+    width: min(94%, 520px);
+    transform: scale(calc(1 + (var(--hero-fade, 0) * 0.08)));
+  }
+
+  .paradox-hero__art img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-position: center bottom;
+  }
+
+  .paradox-hero__eyebrow {
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 12px;
+  }
+
+  .paradox-hero__title span {
+    font-size: 32px;
+  }
+
+  .paradox-hero__kicker {
+    font-size: 15px;
+  }
+
+  .paradox-hero__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .paradox-hero__button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .paradox-hero__progress {
+    display: none;
   }
 
   .section-hud {
