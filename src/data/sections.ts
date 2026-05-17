@@ -34,16 +34,14 @@ export interface SectionData {
 export const sections: SectionData[] = [
   {
     id: "welcome",
-    order: "01",
+    order: "02",
     eyebrow: "WELCOME TO PARADOX",
-    title: ["A NEW ERA", "OF TRADING CARDS"],
+    title: ["A NEW ERA OF", "TRADING CARDS"],
     body: [
       "Enter a dark futuristic universe where power is traded, loyalty is currency, and every card holds a piece of a forgotten world.",
       "Build your collection. Uncover the truth. Command the machine.",
     ],
-    actions: [
-      { label: "Explore Collection", tone: "primary", icon: "arrow" },
-    ],
+    actions: [{ label: "Watch Demo Video", tone: "primary", icon: "play" }],
     features: [
       {
         title: "Curated Collections",
@@ -64,11 +62,11 @@ export const sections: SectionData[] = [
   },
   {
     id: "anatomy",
-    order: "02",
+    order: "03",
     eyebrow: "CARD ANATOMY",
     title: ["EVERY DETAIL", "TELLS A STORY"],
     body: [
-      "Each element of a Paradox: Lex Machina card is more than design — it is data. Rarity, class, stats, identity, lore, and edition number are encoded within every operative.",
+      "Each element of a Paradox: Lex Machina card is more than design - it is data. Rarity, class, stats, identity, lore, and edition number are encoded within every operative.",
       "Knowledge is power. Learn to read everything.",
     ],
     actions: [
@@ -100,12 +98,11 @@ export const sections: SectionData[] = [
   },
   {
     id: "experience",
-    order: "03",
+    order: "04",
     eyebrow: "THE EXPERIENCE",
-    title: ["THE CARD", "COMES ALIVE"],
+    title: ["COLLECTIBLES +", "GAMING"],
     body: [
-      "Scroll to activate. The Mind Reader card rotates in 3D, zooms in to reveal intricate details, and responds like a living artifact.",
-      "Texture, light, and depth shift in real time — every movement reveals something new.",
+      "Each card was carefully handcrafted. Over 300 characters, each with their own lore, expanding the Paradox universe.",
     ],
     actions: [
       { label: "Watch Interaction", tone: "primary", icon: "play" },
@@ -113,34 +110,31 @@ export const sections: SectionData[] = [
     ],
     features: [
       {
-        title: "3D Rotation",
-        text: "Smooth, dimensional rotation on scroll.",
-        icon: "cube",
+        title: "300 Unique cards",
+        text: "A full roster of handcrafted characters with distinct identities, art, and lore.",
+        icon: "cards",
       },
       {
-        title: "Texture Reveal",
-        text: "Microscopic detail emerges as you explore closer.",
-        icon: "crosshair",
+        title: "Ultra Rare cards",
+        text: "Chase scarce cards created for collectors who want the hardest finds.",
+        icon: "spark",
       },
       {
-        title: "Living Interaction",
-        text: "Light, glow, and depth react to your movement.",
-        icon: "layers",
+        title: "Balanced Stats",
+        text: "Every card is tuned with stats that support collection strategy and play.",
+        icon: "scan",
       },
     ],
   },
   {
     id: "legacy",
-    order: "04",
+    order: "05",
     eyebrow: "BUILD YOUR LEGACY",
-    title: ["EXPLORE.", "COLLECT.", "PLAY."],
+    title: ["BUILD YOUR", "DECK AND PLAY"],
     body: [
-      "Discover rare cards. Uncover hidden lore. Each addition to your collection expands the universe — and your place within it.",
-      "The paradox grows with every choice. What will you find next?",
+      "Explore the collection, collect your favorites, and build your unbeatable deck! Every card in your wallet will start in your initial deck.",
     ],
-    actions: [
-      { label: "View Collection", tone: "primary" },
-    ],
+    actions: [{ label: "View Collection", tone: "primary" }],
     features: [
       {
         title: "Rare & Powerful",

@@ -24,8 +24,12 @@ export function Header() {
         ))}
       </nav>
       <div className="header-actions">
-        <button className="header-join" type="button">
-          Mint now
+        <button
+          className="glow-button glow-button--primary header-join is-mint-soon"
+          type="button"
+          aria-disabled="true"
+        >
+          <span>Mint Soon</span>
         </button>
       </div>
     </header>

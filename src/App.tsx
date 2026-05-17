@@ -23,7 +23,7 @@ export default function App() {
   const progressSections = [
     { id: "hero", eyebrow: "Paradox" },
     ...sections.map(({ id, eyebrow }) => ({ id, eyebrow })),
-    { id: "signal", eyebrow: "Take The Pill" },
+    { id: "signal", eyebrow: "Just Take The Pill" },
   ];
 
   return (

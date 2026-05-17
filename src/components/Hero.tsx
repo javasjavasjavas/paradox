@@ -42,8 +42,8 @@ export function Hero() {
       <div className="paradox-hero__inner">
         <div className="paradox-hero__copy">
           <p className="paradox-hero__eyebrow">
-            <span />
-            NFT + TCG Universe
+            <b>01.</b>
+            Digital Collectibles + TCG Universe
           </p>
 
           <h1 id="hero-title" className="paradox-hero__title">
@@ -59,10 +59,14 @@ export function Hero() {
 
           <div className="paradox-hero__actions" aria-label="Hero actions">
             <a className="paradox-hero__button" href="#welcome">
-              <span>Explore Collection</span>
+              <span>Explore OG Collection</span>
             </a>
-            <button className="paradox-hero__button paradox-hero__button--primary" type="button">
-              <span>Mint Now</span>
+            <button
+              className="paradox-hero__button paradox-hero__button--primary is-mint-soon"
+              type="button"
+              aria-disabled="true"
+            >
+              <span>Mint Soon</span>
             </button>
           </div>
         </div>

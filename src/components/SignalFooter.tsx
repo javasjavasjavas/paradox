@@ -1,24 +1,21 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Instagram } from "lucide-react";
-
-const footerLinks = [
-  { label: "OG Collection", href: "#welcome" },
-  { label: "Game", href: "#experience" },
-  { label: "Cards", href: "#anatomy" },
-  { label: "Codex", href: "#legacy" },
-];
 
 export function SignalFooter() {
   const reduceMotion = useReducedMotion();
+  const year = new Date().getFullYear();
 
   return (
     <section id="signal" className="signal-footer" data-scroll-section aria-labelledby="signal-title">
       <div className="signal-footer__content">
         <div className="signal-footer__heading">
-          <h2 id="signal-title">Take the Pill</h2>
+          <h2 id="signal-title">Just take the Pill</h2>
           <p>Collect. Conspire. Transcend.</p>
-          <button className="glow-button glow-button--primary signal-footer__cta" type="button">
-            <span>Mint Now</span>
+          <button
+            className="glow-button glow-button--primary signal-footer__cta is-mint-soon"
+            type="button"
+            aria-disabled="true"
+          >
+            <span>Mint Soon</span>
           </button>
         </div>
 
@@ -34,24 +31,15 @@ export function SignalFooter() {
         </motion.div>
       </div>
 
-      <footer className="signal-footer__bar" aria-label="Footer navigation">
-        <nav className="signal-footer__links" aria-label="Footer links">
-          {footerLinks.map((link) => (
-            <a key={link.label} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
+      <footer className="signal-footer__bar" aria-label="Footer">
+        <p className="signal-footer__copyright">&copy; {year} Paradox. All rights reserved.</p>
 
         <nav className="signal-footer__socials" aria-label="Social links">
-          <a href="https://x.com" aria-label="X">
-            X
+          <a href="https://x.com/javpixel_art" aria-label="X (Twitter)">
+            <img src="/assets/brand/x-icon.svg" alt="" />
           </a>
-          <a href="https://discord.com" aria-label="Discord">
-            Discord
-          </a>
-          <a href="https://instagram.com" aria-label="Instagram">
-            <Instagram size={17} aria-hidden="true" />
+          <a href="https://opensea.io/collection/paradox-by-javpixel" aria-label="OpenSea">
+            <img src="/assets/brand/opensea-custom.svg" alt="" />
           </a>
         </nav>
       </footer>

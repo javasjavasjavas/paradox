@@ -374,7 +374,6 @@ button {
   font-size: 14px;
 }
 
-.paradox-hero__eyebrow span,
 .paradox-hero__progress i,
 .paradox-hero__rail span,
 .paradox-hero__rail i {
@@ -387,6 +386,11 @@ button {
   box-shadow:
     0 0 10px rgba(94, 174, 255, 0.72),
     0 0 18px rgba(94, 174, 255, 0.42);
+}
+
+.paradox-hero__eyebrow b {
+  color: white;
+  font: inherit;
 }
 
 .paradox-hero__title {
@@ -666,7 +670,7 @@ button {
 }
 
 .section-title {
-  margin: 24px 0 18px;
+  margin: 24px 0 34px;
   max-width: 820px;
   font-family: var(--font-display);
   font-size: clamp(72px, 6.1vw, 128px);
@@ -710,6 +714,14 @@ button {
   max-width: 470px;
 }
 
+#legacy .section-title {
+  margin-bottom: 44px;
+}
+
+#legacy .section-actions {
+  margin-top: 66px;
+}
+
 .section-copy p {
   margin: 0;
 }
@@ -725,6 +737,10 @@ button {
 #legacy .section-actions {
   gap: 18px;
   margin-top: 30px;
+}
+
+#welcome .section-actions {
+  margin-top: 42px;
 }
 
 .glow-button {
@@ -887,6 +903,37 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.85),
     0 0 22px rgba(83, 159, 255, 0.7),
     0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
+.site-header .header-join.glow-button {
+  min-width: 126px;
+  height: 42px;
+  padding: 0 22px;
+  border-radius: 8px;
+  background: #f5f9ff;
+  color: #07111d;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.site-header .header-join.glow-button span {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.site-header .header-join.glow-button::before,
+.site-header .header-join.glow-button:hover::before {
+  background: none;
+  opacity: 0;
+}
+
+.is-mint-soon,
+.is-mint-soon:hover {
+  cursor: not-allowed;
 }
 
 .feature-grid {
@@ -1142,34 +1189,48 @@ button {
   backdrop-filter: blur(8px);
 }
 
-.signal-footer__links,
+.signal-footer__copyright,
 .signal-footer__socials {
   display: flex;
   align-items: center;
 }
 
-.signal-footer__links {
-  gap: clamp(26px, 4.4vw, 74px);
-}
-
-.signal-footer__links a,
-.signal-footer__socials a {
+.signal-footer__copyright {
+  margin: 0;
   color: rgba(245, 249, 255, 0.76);
-  text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.24em;
+}
+
+.signal-footer__socials a {
+  display: grid;
+  place-items: center;
+  color: rgba(245, 249, 255, 0.76);
+  text-decoration: none;
   transition: color 220ms ease;
 }
 
-.signal-footer__links a:hover,
 .signal-footer__socials a:hover {
   color: white;
 }
 
+.signal-footer__socials img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  opacity: 0.76;
+  object-fit: contain;
+  transition: opacity 220ms ease;
+}
+
+.signal-footer__socials a:hover img {
+  opacity: 1;
+}
+
 .signal-footer__socials {
   justify-content: flex-end;
-  gap: 34px;
+  gap: 28px;
 }
 
 .sticky-card-showcase::before {
@@ -1887,6 +1948,18 @@ button {
   }
 }
 
+@media (max-width: 1560px) and (min-width: 1241px) {
+  .section-title {
+    max-width: 760px;
+    font-size: clamp(64px, 5.35vw, 110px);
+  }
+
+  #welcome .section-title {
+    max-width: min(700px, 39vw);
+    font-size: clamp(58px, 4.95vw, 100px);
+  }
+}
+
 @media (max-width: 1240px) {
   .site-header {
     grid-template-columns: 240px 1fr auto;
@@ -1932,9 +2005,6 @@ button {
     padding: 0 4vw;
   }
 
-  .signal-footer__links {
-    gap: 28px;
-  }
 }
 
 @media (max-width: 1500px) and (min-width: 981px) {
@@ -1987,6 +2057,14 @@ button {
     min-width: 128px;
     height: 38px;
     font-size: 11px;
+  }
+
+  .site-header .header-join.glow-button {
+    min-width: 128px;
+    height: 38px;
+    padding: 0 18px;
+    font-size: 12px;
+    letter-spacing: 0;
   }
 
   .paradox-hero {
@@ -2224,7 +2302,7 @@ button {
     padding: 24px 22px 30px;
   }
 
-  .signal-footer__links,
+  .signal-footer__copyright,
   .signal-footer__socials {
     justify-content: center;
     flex-wrap: wrap;
@@ -2329,6 +2407,19 @@ button {
     letter-spacing: 0.16em;
   }
 
+  .site-header .header-join.glow-button {
+    min-width: 98px;
+    width: auto;
+    height: 36px;
+    padding: 0 12px;
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  .site-header .header-join.glow-button::after {
+    content: none;
+  }
+
   .paradox-hero__inner {
     padding: 14px 18px 96px;
   }
@@ -2414,8 +2505,7 @@ button {
     width: 118vw;
   }
 
-  .signal-footer__links a,
-  .signal-footer__socials a {
+  .signal-footer__copyright {
     font-size: 12px;
     letter-spacing: 0.16em;
   }
