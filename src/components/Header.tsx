@@ -28,7 +28,14 @@ function handleInternalScroll(
 
   event.preventDefault();
   target.scrollIntoView({ behavior: "smooth", block: "start" });
-  window.history.pushState(null, "", href);
+
+  if (window.location.hash) {
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}`,
+    );
+  }
 }
 
 export function Header() {
