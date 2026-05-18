@@ -1,9 +1,11 @@
 const navItems = [
-  { label: "OG Collection", href: "#welcome" },
+  {
+    label: "OG Collection",
+    href: "https://opensea.io/collection/paradox-by-javpixel",
+    external: true,
+  },
+  { label: "Cards", href: "#welcome" },
   { label: "Game", href: "#experience" },
-  { label: "Cards", href: "#anatomy" },
-  { label: "Codex", href: "#legacy" },
-  { label: "Signal", href: "#signal" },
 ];
 
 export function Header() {
@@ -18,7 +20,12 @@ export function Header() {
       </a>
       <nav className="header-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <a key={item.label} href={item.href}>
+          <a
+            key={item.label}
+            href={item.href}
+            target={item.external ? "_blank" : undefined}
+            rel={item.external ? "noreferrer" : undefined}
+          >
             {item.label}
           </a>
         ))}

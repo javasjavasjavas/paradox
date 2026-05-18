@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { SectionData } from "../data/sections";
 import { FeatureItem } from "./FeatureItem";
 import { GlowButton } from "./GlowButton";
+import { MobileSectionCards } from "./MobileSectionCards";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,6 +61,7 @@ export function ScrollSection({ section, index, active, reducedMotion }: ScrollS
       {isAnatomyFocus ? <span className="visually-hidden">{section.title.join(" ")}</span> : null}
       {!isAnatomyFocus ? (
         <>
+          <MobileSectionCards sectionId={section.id} />
           <div className="section-hud section-reveal">
             <span className="hud-diamond" />
             <span>{section.order}</span>

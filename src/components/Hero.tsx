@@ -58,7 +58,12 @@ export function Hero() {
           </p>
 
           <div className="paradox-hero__actions" aria-label="Hero actions">
-            <a className="paradox-hero__button" href="#welcome">
+            <a
+              className="paradox-hero__button"
+              href="https://opensea.io/collection/paradox-by-javpixel"
+              target="_blank"
+              rel="noreferrer"
+            >
               <span>Explore OG Collection</span>
             </a>
             <button
