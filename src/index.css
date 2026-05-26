@@ -931,11 +931,6 @@ button {
   opacity: 0;
 }
 
-.is-mint-soon,
-.is-mint-soon:hover {
-  cursor: not-allowed;
-}
-
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

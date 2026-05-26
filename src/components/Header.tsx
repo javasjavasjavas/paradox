@@ -17,6 +17,8 @@ const navItems = [
   { label: "Game", href: "#experience" },
 ] satisfies NavItem[];
 
+const MINT_URL = "https://opensea.io/collection/paradox-lex-machina/overview";
+
 function handleInternalScroll(
   event: MouseEvent<HTMLAnchorElement>,
   href: string,
@@ -67,13 +69,14 @@ export function Header() {
         ))}
       </nav>
       <div className="header-actions">
-        <button
-          className="glow-button glow-button--primary header-join is-mint-soon"
-          type="button"
-          aria-disabled="true"
+        <a
+          className="glow-button glow-button--primary header-join"
+          href={MINT_URL}
+          target="_blank"
+          rel="noreferrer"
         >
-          <span>Mint Soon</span>
-        </button>
+          <span>Mint</span>
+        </a>
       </div>
     </header>
   );

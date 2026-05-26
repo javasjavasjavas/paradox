@@ -1,5 +1,7 @@
 import { useEffect, useState, type CSSProperties } from "react";
 
+const MINT_URL = "https://opensea.io/collection/paradox-lex-machina/overview";
+
 export function Hero() {
   const [fadeProgress, setFadeProgress] = useState(0);
 
@@ -66,13 +68,14 @@ export function Hero() {
             >
               <span>Explore OG Collection</span>
             </a>
-            <button
-              className="paradox-hero__button paradox-hero__button--primary is-mint-soon"
-              type="button"
-              aria-disabled="true"
+            <a
+              className="paradox-hero__button paradox-hero__button--primary"
+              href={MINT_URL}
+              target="_blank"
+              rel="noreferrer"
             >
-              <span>Mint Soon</span>
-            </button>
+              <span>Mint</span>
+            </a>
           </div>
         </div>
 

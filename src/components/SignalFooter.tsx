@@ -1,5 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
+const MINT_URL = "https://opensea.io/collection/paradox-lex-machina/overview";
+
 export function SignalFooter() {
   const reduceMotion = useReducedMotion();
   const year = new Date().getFullYear();
@@ -10,13 +12,14 @@ export function SignalFooter() {
         <div className="signal-footer__heading">
           <h2 id="signal-title">Just take the Pill</h2>
           <p>Collect. Conspire. Transcend.</p>
-          <button
-            className="glow-button glow-button--primary signal-footer__cta is-mint-soon"
-            type="button"
-            aria-disabled="true"
+          <a
+            className="glow-button glow-button--primary signal-footer__cta"
+            href={MINT_URL}
+            target="_blank"
+            rel="noreferrer"
           >
-            <span>Mint Soon</span>
-          </button>
+            <span>Mint</span>
+          </a>
         </div>
 
         <motion.div
